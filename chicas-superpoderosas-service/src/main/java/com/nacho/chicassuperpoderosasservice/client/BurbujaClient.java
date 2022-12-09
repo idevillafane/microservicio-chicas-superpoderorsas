@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@FeignClient(name="burbuja-service", url="http://localhost:8003")
+@FeignClient(name="burbuja-service")
 
 public interface BurbujaClient {
 
