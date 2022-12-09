@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@FeignClient(name="bellota-service", url="http://localhost:8003")
+@FeignClient(name="bellota-service", url="http://localhost:8004")
 public interface BellotaClient {
 
     @GetMapping("/bellota/by-chica/{chicaId}")

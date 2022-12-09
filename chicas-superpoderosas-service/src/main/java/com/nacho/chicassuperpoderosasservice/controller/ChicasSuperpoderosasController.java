@@ -43,23 +43,23 @@ public class ChicasSuperpoderosasController {
     }
 
     @GetMapping("/by-chica/{chicaId}")
-    public ResponseEntity<List<Bellota>> getByChicaId(@PathVariable("chicaId") int chicaId) {
+    public ResponseEntity<List<Bellota>> getBellotaByChicaId(@PathVariable("chicaId") int chicaId) {
         List <Bellota> bellotas = chicasSuperpoderosasService.getBellotas(chicaId);
         if(bellotas.isEmpty())
             return ResponseEntity.noContent().build();
         return ResponseEntity.ok(bellotas);
     }
 
-    @GetMapping("/by-chica/{chicaId}")
-    public ResponseEntity<List<Bombon>> getByChicaId(@PathVariable("chicaId") int chicaId) {
+    @GetMapping("/by-chica1/{chicaId}")
+    public ResponseEntity<List<Bombon>> getBombonByChicaId(@PathVariable("chicaId") int chicaId) {
         List <Bombon> bombones = chicasSuperpoderosasService.getBombones(chicaId);
         if(bombones.isEmpty())
             return ResponseEntity.noContent().build();
         return ResponseEntity.ok(bombones);
     }
 
-    @GetMapping("/by-chica/{chicaId}")
-    public ResponseEntity<List<Burbuja>> getByChicaId(@PathVariable("chicaId") int chicaId) {
+    @GetMapping("/by-chica2/{chicaId}")
+    public ResponseEntity<List<Burbuja>> getBurbujaByChicaId(@PathVariable("chicaId") int chicaId) {
         List <Burbuja> burbujas = chicasSuperpoderosasService.getBurbujas(chicaId);
         if(burbujas.isEmpty())
             return ResponseEntity.noContent().build();

@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@FeignClient(name="bombon-service", url="http://localhost:8004")
+@FeignClient(name="bombon-service", url="http://localhost:8002")
 public interface BombonClient {
 
     @GetMapping("/bombon/by-chica/{chicaId}")
