@@ -1,0 +1,4 @@
+eureka:
+  cliente:
+    fetch-registry: false
+    register-with-eureka: false
