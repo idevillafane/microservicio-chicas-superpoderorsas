@@ -1,6 +1,9 @@
 package com.nacho.chicassuperpoderosasservice.controller;
 
 import com.nacho.chicassuperpoderosasservice.entity.ChicasSuperpoderosas;
+import com.nacho.chicassuperpoderosasservice.model.Bellota;
+import com.nacho.chicassuperpoderosasservice.model.Bombon;
+import com.nacho.chicassuperpoderosasservice.model.Burbuja;
 import com.nacho.chicassuperpoderosasservice.service.ChicasSuperpoderosasService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -38,6 +41,31 @@ public class ChicasSuperpoderosasController {
             return ResponseEntity.notFound().build();
         return ResponseEntity.ok(chicaSuperpoderosaNueva);
     }
+
+    @GetMapping("/by-chica/{chicaId}")
+    public ResponseEntity<List<Bellota>> getByChicaId(@PathVariable("chicaId") int chicaId) {
+        List <Bellota> bellotas = chicasSuperpoderosasService.getBellotas(chicaId);
+        if(bellotas.isEmpty())
+            return ResponseEntity.noContent().build();
+        return ResponseEntity.ok(bellotas);
+    }
+
+    @GetMapping("/by-chica/{chicaId}")
+    public ResponseEntity<List<Bombon>> getByChicaId(@PathVariable("chicaId") int chicaId) {
+        List <Bombon> bombones = chicasSuperpoderosasService.getBombones(chicaId);
+        if(bombones.isEmpty())
+            return ResponseEntity.noContent().build();
+        return ResponseEntity.ok(bombones);
+    }
+
+    @GetMapping("/by-chica/{chicaId}")
+    public ResponseEntity<List<Burbuja>> getByChicaId(@PathVariable("chicaId") int chicaId) {
+        List <Burbuja> burbujas = chicasSuperpoderosasService.getBurbujas(chicaId);
+        if(burbujas.isEmpty())
+            return ResponseEntity.noContent().build();
+        return ResponseEntity.ok(burbujas);
+    }
+
 
 
 
