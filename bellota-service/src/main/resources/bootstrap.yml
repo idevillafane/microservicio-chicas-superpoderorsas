@@ -1,2 +1,7 @@
-server.port=8004
-spring.application.name=bellota-service
+spring:
+  application:
+    name: chicas-superpoderosas-service
+  cloud:
+    config:
+      enabled: true
+      uri: http://localhos:8081
