@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: bombon-service
+  cloud:
+    config:
+      enabled: true
+      uri: http://localhos:8081
