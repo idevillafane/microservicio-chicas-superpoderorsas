@@ -1,6 +1,6 @@
 spring:
   application:
-    name: chicas-superpoderosas-service
+    name: bellota-service
   cloud:
     config:
       enabled: true
