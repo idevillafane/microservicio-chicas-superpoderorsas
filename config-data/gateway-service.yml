@@ -1,0 +1,33 @@
+server:
+  port: 8080
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      default-zone: http://localhost:8761/eureka
+  instance:
+    hostname: localhost
+Spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: chicas-superpoderosas-service
+          uri: lb://chicas-superpoderosas-service
+          predicates:
+            - Path=/chicas-superpoderosas/**
+        - id: bombon-service
+          uri: lb://bombon-service
+          predicates:
+            - Path=/bombon/**
+        - id: burbuja-service
+          uri: lb://burbuja-service
+          predicates:
+            - Path=/burbuja/**
+        - id: bellota-service
+          uri: lb://bellota-service
+          predicates:
+            - Path=/bellota/**
