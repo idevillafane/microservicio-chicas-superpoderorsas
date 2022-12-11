@@ -9,7 +9,6 @@ eureka:
   instance:
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
 spring:
-  application:
-    zipkin:
-      baseUrl: http://localhost:9411/
-      enabled: true
+  zipkin:
+    baseUrl: http://localhost:9411/
+    enabled: true
