@@ -5,7 +5,7 @@ spring:
     config:
       server:
         git:
-          default-label: 4-gateway
+          default-label: 5-zipkin
           uri: https://github.com/idevillafane/microservicio-chicas-superpoderosas/
           search-paths: config-data
   application:
