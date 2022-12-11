@@ -1,10 +1,14 @@
-PARA CORRER ESTE PROYECTO SE DEBE ABRIR CADA UNO DE LOS SERVICIOS COMO PROYECTO INDEPENDIENTE Y CORRERLOS. AL ESTAR BASADOS EN SPRINGBOOT LA CONEXIÓN YA ESTÁ CONFIGURADA PARA EJECUTARSE CON TOMCAT, SIN NECESIDAD DE REALIZAR AJUSTES ADICIONALES. PARA SABER QUÉ PUERTOS UTILIZAR A FIN DE PROBAR LA APLICACIÓN, CONTINUAR LEYENDO. PARA CONOCER LOS ENDPOINTS SE DEBE INGRESAR AL CÓDIGO DEL PROYECTO. POR EL MOMENTO NO SUBI DOCUMENTACION AL RESPECTO.
+Para correr este proyecto debe levantar los microservicios siguiendo un orden determinado:
 
-Para este commit se conectaron los servicios de Bombón, Burbuja y Bellota al servicio ChicasSuperPoderosas (en adelante: CSP).
+1) Correr Eureka Server
+2) Correr Config Service
+3) Correr Gateway Service
+4) Levantar uno a uno, sin importar el orden, los servicios Chicas Superpoderosas, Bombon, Burbuja y Bellota.
 
-Si bien funcionalmente aun tiene poco sentido -si se trata de entender el funcionamiento del sistema de microservcios en relación al contexto de la serie animada-, operativamente cumple su objetivo, el cual es mostrar un grupo de microservicios interactuando entre sí.
+En estas ultimas actualizaciones se incorporó al proyecto las dependencias de Eureka y se implemento un Gateway para que todas las llamadas a las distintas API's que componen el sistema de microservicios puedan centralizarse en el puerto 8080.
 
-En este caso, el servicio CSP tiene la facultad de llamar a cada una de las chicas (Bombon, Burbuja o Bellota) gracias a la incorporación de la librería Open Feign, desarrollada en un principio por Netflix, sobre el framework de Spring, y luego adoptada por la comunidad.
+
+// ----- A continuación se deja una explicación breve sobre el concepto del proyecto, extraido de ramas más antiguas. Desesestimar la información no relevante (puertos y endpoints pudieron haber cambiado) ----- //
 
 Para entender qué esperar de este repositorio, vale marcar los siguientes aspectos:
 
@@ -14,7 +18,3 @@ b-. Los servicios Bombon (puerto 8004), Burbuja (puerto 8003) y Bellota (puerto 
 
 c-. En la integración de los microservicios mediante Feign, lo que se hizo fue dar al servicio CSP la capacidad de llamar a los metodos GET de cada uno de los otros servicios para poder traer las Bombones, Burjbujas y Bellotas creadas con lllamados realizados desde el puerto 8001.
 
-A FUTURO:
-
-- Se agregará en esta rama la correspondiente colección de Postman para probar los distintos endpoints.
-- Se creará una nueva rama en donde se integrará Eureka.

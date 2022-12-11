@@ -1,3 +1,5 @@
+server:
+  port: 8769
 spring:
   application:
     name: eureka-server
